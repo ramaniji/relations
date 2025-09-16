@@ -156,7 +156,7 @@ findRelation(A1);
 
 findRelation(A):=block
 (
-	[A2:cartesian_product_list(A,  A),  R:[]],
+	[A2:cartesian_product_list(A,  A),  R:[],   t],
 	for i:1 thru length(A2) do
 	(
 		t:A2[i],
@@ -571,7 +571,7 @@ lub(A1,   R1,   P1);
 
 lub(A,   R,   P):=block
 (
-    	[U:findUpperBounds(A,  R,  P)],
+    	[U:findUpperBounds(A,  R,  P),   t],
     	if(U=[]) then(return(U)) else
     	(
         	t:U[1],
@@ -605,7 +605,7 @@ glb(A1,   R1,   P1);
 
 glb(A,   R,   P):=block
 (
-    	[L:findLowerBounds(A,  R,  P)],
+    	[L:findLowerBounds(A,  R,  P),   t],
     	if(L=[]) then(return(L)) else
     	(
         	t:L[1],
